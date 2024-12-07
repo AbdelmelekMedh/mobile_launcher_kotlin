@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MyTabLayout" parent="Base.Widget.Design.TabLayout">
+        <item name="tabTextAppearance">@style/MyTabTextAppearance</item>
+    </style>
+
+    <!--Tablayout-->
+    <style name="MyTabTextAppearance" parent="TextAppearance.AppCompat.Button">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <!--Date Picker-->
+    <style name="DatePicker" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">#313131</item>
+    </style>
+
+    <!-- For auth activity -->
+    <style name="searchView">
+        <item name="android:colorControlActivated">@color/dark_grey</item>
+    </style>
+
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/transparent</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+        <item name="android:layoutDirection">rtl</item>
+    </style>
+
+    <style name="ReviewRatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/light_black</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+    </style>
+
+
+    <style name="PopupTheme" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="DefaultEditTextStyle">
+        <item name="android:inputType">number</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLength">1</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_marginEnd">@dimen/_2sdp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/rounded_dialog</item>
+    </style>
+
+    <style name="RejectedNotifStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/inline_error</item>
+    </style>
+
+    <style name="AcceptedNotifStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/inline_success</item>
+    </style>
+
+    <style name="InfoNotifStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/inline_info</item>
+    </style>
+
+    <style name="SurveyBtn" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/survey_btn</item>
+    </style>
+
+    <style name="Widget.Theme.Mobile_launcher_kotlin.ActionBar.Fullscreen" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+
+    <style name="Widget.Theme.Mobile_launcher_kotlin.ButtonBar.Fullscreen" parent="">
+        <item name="android:background">@color/black_overlay</item>
+        <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
+    </style>
+</resources>

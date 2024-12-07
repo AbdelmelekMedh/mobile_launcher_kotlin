@@ -1,0 +1,17 @@
+subscription phoneNotif($gsfId: String!) {
+    phoneNotif(gsfId: $gsfId) {
+        type
+        residence {
+            id
+            roomId
+            guestId
+            from
+            to
+            device {
+                id
+                imei
+                gsfId
+            }
+        }
+    }
+}

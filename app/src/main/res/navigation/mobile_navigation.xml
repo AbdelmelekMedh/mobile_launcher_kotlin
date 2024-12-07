@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/homeFragment">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.hellodati.launcher.ui.fragment.NotificationFragment"
+        android:label="@string/menu_notification"
+        tools:layout="@layout/fragment_home" />
+
+    <!--<fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.hellodati.launcher.ui.gallery.GalleryFragment"
+        android:label="@string/menu_hotspot"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.hellodati.launcher.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" /> -->
+
+    <fragment
+        android:id="@+id/guideFragment"
+        android:name="com.hellodati.launcher.ui.fragment.GuideFragment"
+        android:label="fragment_guide"
+        tools:layout="@layout/fragment_guide" />
+    <fragment
+        android:id="@+id/callsFragment"
+        android:name="com.hellodati.launcher.ui.fragment.CallsFragment"
+        android:label="fragment_calls"
+        tools:layout="@layout/fragment_calls" />
+    <fragment
+        android:id="@+id/appsFragment"
+        android:name="com.hellodati.launcher.ui.fragment.AppsFragment"
+        android:label="fragment_apps"
+        tools:layout="@layout/fragment_apps">
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.hellodati.launcher.ui.fragment.HomeFragment"
+        android:label="fragment_home2"
+        tools:layout="@layout/fragment_home2" />
+    <fragment
+        android:id="@+id/basketFragment"
+        android:name="com.hellodati.launcher.ui.fragment.BasketFragment"
+        android:label="fragment_basket"
+        tools:layout="@layout/fragment_basket" />
+    <fragment
+        android:id="@+id/restaurentFragment"
+        android:name="com.hellodati.launcher.ui.fragment.RestaurantFragment"
+        android:label="fragment_restaurant"
+        tools:layout="@layout/fragment_restaurant" />
+    <fragment
+        android:id="@+id/menuRestaurantFragment"
+        android:name="com.hellodati.launcher.ui.fragment.InRoomFoodCategoriesFragment"
+        android:label="fragment_menu_restaurant"
+        tools:layout="@layout/fragment_menu_restaurant" />
+    <fragment
+        android:id="@+id/drinksFragment"
+        android:name="com.hellodati.launcher.ui.fragment.DrinkFragment"
+        android:label="fragment_drinks"
+        tools:layout="@layout/fragment_drinks" />
+    <fragment
+        android:id="@+id/restaurantAndDrinkFragment"
+        android:name="com.hellodati.launcher.ui.fragment.RestaurantAndDrinkFragment"
+        android:label="fragment_restaurant_and_drink"
+        tools:layout="@layout/fragment_restaurant_and_drink" />
+    <fragment
+        android:id="@+id/menuRestaurantAndDrinkFragment"
+        android:name="com.hellodati.launcher.ui.fragment.MenuRestaurantAndDrinkFragment"
+        android:label="fragment_menu_restaurant_and_drink"
+        tools:layout="@layout/fragment_menu_restaurant_and_drink" />
+    <fragment
+        android:id="@+id/glbRestarantFragment"
+        android:name="com.hellodati.launcher.ui.fragment.GlbRestarantFragment"
+        android:label="fragment_glb_restarant"
+        tools:layout="@layout/fragment_glb_restarant" />
+    <fragment
+        android:id="@+id/historyBookingFragment"
+        android:name="com.hellodati.launcher.ui.fragment.HistoryBookingFragment"
+        android:label="fragment_history_booking"
+        tools:layout="@layout/fragment_history_booking" />
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.hellodati.launcher.ui.fragment.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" />
+    <fragment
+        android:id="@+id/wellBeingFragment"
+        android:name="com.hellodati.launcher.ui.fragment.WellBeingFragment"
+        android:label="fragment_well_being"
+        tools:layout="@layout/fragment_well_being" />
+    <fragment
+        android:id="@+id/eventFragment"
+        android:name="com.hellodati.launcher.ui.fragment.EventFragment"
+        android:label="fragment_event"
+        tools:layout="@layout/fragment_event"/>
+
+    <fragment
+        android:id="@+id/leisureFragment"
+        android:name="com.hellodati.launcher.ui.fragment.LeisureFragment"
+        android:label="fragment_leisure"
+        tools:layout="@layout/fragment_leisure" />
+    <fragment
+        android:id="@+id/globalLeisureFragment"
+        android:name="com.hellodati.launcher.ui.fragment.GlobalLeisureFragment"
+        android:label="fragment_global_leisure"
+        tools:layout="@layout/fragment_global_leisure" />
+    <fragment
+        android:id="@+id/conciergeServicesFragment"
+        android:name="ui.fragment.ConciergeServicesFragment"
+        android:label="ConciergeServicesFragment" />
+    <fragment
+        android:id="@+id/conciergeFragment"
+        android:name="com.hellodati.launcher.ui.fragment.ConciergeFragment"
+        android:label="fragment_concierge"
+        tools:layout="@layout/fragment_concierge" />
+    <fragment
+        android:id="@+id/conciergeServiceItemsFragment"
+        android:name="com.hellodati.launcher.ui.fragment.ConciergeServiceItemsFragment"
+        android:label="fragment_concierge_service_items"
+        tools:layout="@layout/fragment_concierge_service_items" />
+    <fragment
+        android:id="@+id/contactUsFragment"
+        android:name="com.hellodati.launcher.ui.fragment.ContactUsFragment"
+        android:label="fragment_contact_us"
+        tools:layout="@layout/fragment_contact_us" />
+    <fragment
+        android:id="@+id/meetingFragment"
+        android:name="com.hellodati.launcher.ui.fragment.MeetingFragment"
+        android:label="fragment_meeting"
+        tools:layout="@layout/fragment_meeting" />
+    <fragment
+        android:id="@+id/globalMeetingFragment"
+        android:name="com.hellodati.launcher.ui.fragment.GlobalMeetingFragment"
+        android:label="fragment_global_meeting"
+        tools:layout="@layout/fragment_global_meeting" />
+    <fragment
+        android:id="@+id/bookingEventFragment"
+        android:name="com.hellodati.launcher.ui.fragment.BookingEventFragment"
+        android:label="fragment_booking_event"
+        tools:layout="@layout/fragment_booking_event" />
+    <fragment
+        android:id="@+id/inRoomDrinkFragment"
+        android:name="com.hellodati.launcher.ui.fragment.MenuDrinkFragment"
+        android:label="fragment_menu_drink"
+        tools:layout="@layout/fragment_menu_drink"/>
+    <fragment
+        android:id="@+id/menuBookingAboutRestaurantDrinkFragment"
+        android:name="com.hellodati.launcher.ui.fragment.MenuBookingAboutRestaurantDrinkFragment"
+        android:label="fragment_menu_booking_about_restaurant_drink"
+        tools:layout="@layout/fragment_menu_booking_about_restaurant_drink"/>
+    <fragment
+        android:id="@+id/menuRestoAndDrinkItems"
+        android:name="com.hellodati.launcher.ui.fragment.MenuRestoAndDrinkItems"
+        android:label="fragment_menu_resto_and_drink_items"
+        tools:layout="@layout/fragment_menu_resto_and_drink_items"/>
+    <fragment
+        android:id="@+id/orderHistoryFragment"
+        android:name="com.hellodati.launcher.ui.fragment.OrderHistoryFragment"
+        android:label="activity_order_history"
+        tools:layout="@layout/fragment_order_history"/>
+    <fragment
+        android:id="@+id/aboutItemNavFragment"
+        android:name="com.hellodati.launcher.ui.fragment.AboutItemNavFragment"
+        android:label="activity_about_item_nav"
+        tools:layout="@layout/fragment_about_item_nav"/>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.hellodati.launcher.ui.fragment.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat"/>
+    <fragment
+        android:id="@+id/surveyListFragment"
+        android:name="com.hellodati.launcher.ui.fragment.SurveyListFragment"
+        android:label="fragment_survey_list"
+        tools:layout="@layout/fragment_survey_list"/>
+    <fragment
+        android:id="@+id/menuEventFragment"
+        android:name="MenuEventFragment"
+        android:label="MenuEventFragment"
+        tools:layout="@layout/fragment_menu_event"/>
+    <fragment
+        android:id="@+id/surveyFragment"
+        android:name="com.hellodati.launcher.ui.fragment.SurveyFragment"
+        android:label="fragment_survey"
+        tools:layout="@layout/fragment_survey" />
+
+
+</navigation>

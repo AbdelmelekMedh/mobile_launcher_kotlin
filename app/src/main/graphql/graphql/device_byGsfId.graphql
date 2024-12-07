@@ -1,0 +1,12 @@
+query device_byGsfId($gsfId: String!)  {
+    device_byGsfId(gsfId: $gsfId) {
+        id
+        imei
+        gsfId
+        sim {
+            isWhatsapp
+            number
+            prefix
+        }
+    }
+}

@@ -1,0 +1,78 @@
+query eateriesMobile {
+    eateriesMobile {
+        id
+        title {
+            default
+            en
+            fr
+            ar
+        }
+        image
+        description {
+            default
+            en
+            fr
+            ar
+        }
+        speciality {
+            default
+            en
+            fr
+            ar
+        }
+        categories {
+            id
+            image
+            title {
+                default
+                en
+                fr
+                ar
+            }
+            description {
+                default
+                en
+                fr
+                ar
+            }
+            items {
+                id
+                image
+                title {
+                    default
+                    en
+                    fr
+                    ar
+                }
+                description {
+                    default
+                    en
+                    fr
+                    ar
+                }
+                price {
+                    amount
+                    currency
+                    hasDiscount
+                    discountType
+                    discountAmount
+                }
+            }
+        }
+        reviews {
+            type
+            itemId
+            comment
+            rating
+            createdAt
+            updatedAt
+            guest {
+                firstName
+                lastName
+                country
+            }
+        }
+        ratingAverage
+        starsNumber{fiveStars fourStars threeStars twoStars oneStar}
+    }
+}

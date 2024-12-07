@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:id="@+id/card_survey"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_marginTop="5dp"
+    app:cardCornerRadius="10dp"
+    android:layout_marginBottom="5dp"
+    android:layout_gravity="center_horizontal"
+    app:cardBackgroundColor="@color/transparent">
+
+  <ImageView
+      android:id="@+id/card_color"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_gravity="center_horizontal"
+      android:adjustViewBounds="true"
+      android:scaleType="centerCrop"/>
+
+
+    <TextView
+        android:id="@+id/state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="80dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="@color/dark_grey"
+        android:textColorHint="@color/red"
+        android:textSize="22.5sp" />
+
+</androidx.cardview.widget.CardView>

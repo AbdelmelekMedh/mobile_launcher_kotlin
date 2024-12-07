@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_card"
+    android:layout_width="match_parent"
+    android:layout_height="121dp"
+    android:layout_marginHorizontal="5dp"
+    android:layout_marginVertical="3dp"
+    android:backgroundTint="@color/light_blue"
+    android:layoutDirection="ltr"
+    android:orientation="vertical"
+    app:cardCornerRadius="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="159dp"
+            android:layout_height="120dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="-7dp"
+            android:layout_marginBottom="2dp"
+            android:layout_toRightOf="@id/encart"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop" />
+
+
+        <RelativeLayout
+            android:id="@+id/encart"
+            android:layout_width="170dp"
+            android:layout_height="120dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="-1dp"
+            android:layout_marginTop="-1dp"
+            android:background="@drawable/ic_encart_fleche">
+
+            <RelativeLayout
+                android:layout_width="127dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20.4dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:fontFamily="@font/champagne_limousines_thickbold"
+                    android:textColor="#739147"
+                    android:maxWidth="130dip"
+                    android:singleLine="true"
+                    android:textSize="15.8dp" />
+
+                <TextView
+                    android:id="@+id/speciality"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/name"
+                    android:layout_marginBottom="9dp"
+                    android:fontFamily="@font/champagne_limousines_thick"
+                    android:gravity="end"
+                    android:maxWidth="130dip"
+                    android:singleLine="true"
+                    android:textColor="#4a4a4a"
+                    android:textSize="13.3dp" />
+
+                <LinearLayout
+                    android:id="@+id/layout_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/speciality"
+                    android:layout_marginBottom="2dp"
+                    android:orientation="horizontal">
+
+   <!--                 <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginRight="2dp"
+                        android:src="@drawable/ic_access_time_black"
+                        tools:visibility="gone" />-->
+
+                    <TextView
+                        android:id="@+id/state"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/champagne_limousines_thickbold"
+                        android:textColor="#5ab400"
+                        android:textSize="10.8dp" />
+                </LinearLayout>
+
+         <!--       <RatingBar
+                    android:id="@+id/rate"
+                    style="@style/Widget.AppCompat.RatingBar.Indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/layout_state"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="-54dp"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:progressBackgroundTint="@android:color/white"
+                    android:progressTint="@color/colorAccent"
+                    android:rating="5"
+                    android:scaleX=".4"
+                    android:scaleY=".4"
+                    android:secondaryProgressTint="@color/colorAccent"
+                    android:stepSize="1"
+                    tools:visibility="gone" />-->
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

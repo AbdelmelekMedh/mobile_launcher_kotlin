@@ -1,0 +1,9 @@
+query guest($id: String!) {
+    guest(id: $id) {
+        id,
+        firstName,
+        lastName,
+        email,
+        hasUnresolvedConversation,
+    }
+}

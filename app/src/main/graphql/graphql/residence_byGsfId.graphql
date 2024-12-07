@@ -1,0 +1,18 @@
+query residence_byGsfId($gsfId: String!) {
+    residence_byGsfId(gsfId: $gsfId) {
+        id
+        roomId
+        guestId
+        from
+        to
+        device {
+            id
+            imei
+            gsfId
+            hotspotSSID
+            hotspotPassword
+            dataLimit
+            callLimit
+        }
+    }
+}

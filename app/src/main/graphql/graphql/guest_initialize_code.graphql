@@ -1,0 +1,5 @@
+mutation guest_initialize_code($input: InitializeGuestCodeInput!) {
+    guest_initialize_code(
+        input: $input
+    )
+}

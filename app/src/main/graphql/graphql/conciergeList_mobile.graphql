@@ -1,0 +1,24 @@
+query conciergeList_mobile {
+    conciergeList_mobile {
+        id
+        title {
+            default
+            ar
+            fr
+            en
+        }
+        description {
+            default
+            ar
+            fr
+            en
+        }
+        image
+        listServices{
+            default
+            ar
+            fr
+            en
+        }
+    }
+}

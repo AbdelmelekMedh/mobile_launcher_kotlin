@@ -1,0 +1,12 @@
+query gsiAvailableQuestions($residenceId: String!) {
+    gsiAvailableQuestions(residenceId: $residenceId) {
+        id
+        question
+        primary
+        residenceId
+        rate
+        selectedAnswers
+        skiped
+        displayAfter
+    }
+}

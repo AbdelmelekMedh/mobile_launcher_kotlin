@@ -1,0 +1,3 @@
+mutation mark_all_as_read($conversationId: String!,$isFromGuest: Boolean!) {
+    mark_all_as_read(conversationId: $conversationId,isFromGuest:$isFromGuest)
+}

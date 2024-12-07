@@ -1,0 +1,5 @@
+mutation message_send($input: CreateMessageInput!) {
+    message_send(input: $input) {
+        id
+    }
+}

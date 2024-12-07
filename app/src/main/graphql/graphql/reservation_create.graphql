@@ -1,0 +1,9 @@
+mutation reservation_create($input: CreateReservationInput!) {
+    reservation_create(input: $input) {
+        id
+        ReservationNumber
+        date
+        numberOfPerson
+        reservationType
+    }
+}

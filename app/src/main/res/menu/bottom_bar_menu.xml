@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/city_guide"
+        android:icon="@drawable/ic_btn_guide"
+        android:title="@string/guide_item"/>
+    <item android:id="@+id/apps"
+        android:icon="@drawable/ic_btn_apps"
+        android:title="@string/apps_item"/>
+    <item
+        android:id="@+id/home"
+        android:elevation="0dp"
+        android:title="" />
+    <item android:id="@+id/call"
+        android:icon="@drawable/ic_btn_phone"
+        android:title="@string/calls_item"/>
+    <item android:id="@+id/basket"
+        android:icon="@drawable/ic_add_shopping"
+        android:title="@string/basket_item"/>
+</menu>

@@ -1,0 +1,41 @@
+query wellBeing_mobile {
+    wellBeing_mobile {
+        id
+        description {
+            default
+            ar
+            en
+            fr
+        }
+        title {
+            default
+            ar
+            en
+            fr
+        }
+        image
+        items {
+            id
+            description {
+                default
+                ar
+                en
+                fr
+            }
+            title {
+                default
+                ar
+                en
+                fr
+            }
+            image
+            price {
+                amount
+                currency
+                hasDiscount
+                discountType
+                discountAmount
+            }
+        }
+    }
+}

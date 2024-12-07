@@ -1,0 +1,15 @@
+mutation createConciergeRequest(
+    $createConciergeRequestInput: CreateConciergeRequestInput!
+) {
+    createConciergeRequest(
+        createConciergeRequestInput:$createConciergeRequestInput
+    ) {
+        id
+        residenceId
+        conciergeId
+        subItem
+        requestNumber
+        createdAt
+        updatedAt
+    }
+}

@@ -1,0 +1,8 @@
+query room_by_GSFID($id: String!) {
+    room_by_GSFID(id: $id) {
+        number
+        capacity
+        floor
+        deviceId
+    }
+}

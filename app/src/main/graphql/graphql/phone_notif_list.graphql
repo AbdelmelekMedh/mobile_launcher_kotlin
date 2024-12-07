@@ -1,0 +1,96 @@
+query phone_notif_list($residenceId: String!) {
+    phone_notif_list(residenceId: $residenceId) {
+        id
+        orderId
+        orderItemId
+        reservationId
+        residenceId
+        passCode
+        type
+        createdAt
+        updatedAt
+        mobileReservation {
+            ReservationNumber
+            numberOfPerson
+            date
+            reservationType
+            status
+            leisureService {
+                title {
+                    ar
+                    default
+                    fr
+                    en
+                }
+            }
+            eateryservice {
+                title {
+                    ar
+                    default
+                    fr
+                    en
+                }
+            }
+            wellBeingService {
+                title {
+                    ar
+                    default
+                    fr
+                    en
+                }
+            }
+            meetingService {
+                title {
+                    ar
+                    default
+                    fr
+                    en
+                }
+            }
+            eventService {
+                title {
+                    ar
+                    default
+                    en
+                    fr
+                }
+            }
+        }
+        mobileOrder {
+            id
+            total {
+                amount
+                currency
+            }
+            quantity
+            orderNumber
+            orderItems {
+                id
+                irdItemId
+                orderId
+                item {
+                    id
+                    title {
+                        ar
+                        default
+                        en
+                        fr
+                    }
+                }
+            }
+        }
+        mobileConciergeRequest {
+            status
+            requestNumber
+            concierge {
+                id
+                title {
+                    ar
+                    fr
+                    en
+                    default
+                }
+            }
+        }
+    }
+}

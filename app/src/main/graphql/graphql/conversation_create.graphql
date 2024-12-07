@@ -1,0 +1,21 @@
+mutation conversation_create(
+    $input: CreateConversationInput!
+    $isFromGuest: Boolean!
+) {
+    conversation_create(input: $input, isFromGuest: $isFromGuest) {
+        id
+        guestId
+        chats {
+            id
+            message
+            read
+            senderId
+            sendingTime
+            guestMessage
+            sender {
+                firstName
+                lastName
+            }
+        }
+    }
+}

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.EditProfileActivity">
+
+    <RelativeLayout
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="81dp"
+        android:background="@color/near_Chinese_blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/textView5"
+            android:background="@android:color/transparent"
+            android:paddingLeft="7dp"
+            android:paddingTop="4dp"
+            android:paddingRight="7dp"
+            android:paddingBottom="4dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_arrow_head"
+            app:tint="@android:color/white" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/interstateplus_light"
+            android:text="@string/edit_profile"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/guest_image"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="28dp"
+        android:src="@drawable/ic_user_icon"
+        app:civ_border_color="#fff"
+        app:civ_border_width="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/head" />
+
+    <TextView
+        android:id="@+id/profile_pic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="@string/photo"
+        android:textColor="@color/near_Chinese_blue"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/guest_image"
+        app:layout_constraintStart_toStartOf="@+id/guest_image"
+        app:layout_constraintTop_toBottomOf="@+id/guest_image" />
+
+    <TextView
+        android:id="@+id/passport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:hint="@string/passport"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_pic" />
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/passport"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passport">
+
+        <TextView
+            android:id="@+id/birth_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:hint="@string/date_of_birth"
+            android:textSize="14sp" />
+
+        <com.haipq.android.flagkit.FlagImageView
+            android:id="@+id/flagView"
+            android:layout_width="20dp"
+            android:layout_height="15dp"
+            app:countryCode="TN"
+            tools:src="@drawable/flag_us" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/edit_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="#3b5da1"
+        android:drawableRight="@drawable/ic_edit_editetext"
+        android:hint="@string/phone2"
+        android:inputType="number"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear" />
+
+    <EditText
+        android:id="@+id/edit_mail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_phone"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="#3b5da1"
+        android:drawableRight="@drawable/ic_edit_editetext"
+        android:hint="@string/email2"
+        android:inputType="textEmailAddress"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_phone" />
+
+    <EditText
+        android:id="@+id/edit_old_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_mail"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="#3b5da1"
+        android:drawableRight="@drawable/ic_edit_editetext"
+        android:hint="@string/password"
+        android:inputType="number"
+        android:maxLength="4"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_mail" />
+
+    <EditText
+        android:id="@+id/edit_new_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_old_pwd"
+
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="#3b5da1"
+        android:drawableRight="@drawable/ic_edit_editetext"
+        android:hint="@string/userIdHint"
+        android:inputType="number"
+        android:maxLength="4"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_old_pwd" />
+
+    <EditText
+        android:id="@+id/edit_conf_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_new_pwd"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="#3b5da1"
+        android:drawableRight="@drawable/ic_edit_editetext"
+        android:hint="@string/userIdCnfrHint"
+        android:inputType="number"
+        android:maxLength="4"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_new_pwd" />
+
+
+    <Button
+        android:id="@+id/btn_valider"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="#315294"
+        android:drawableLeft="@drawable/ic_valid"
+        android:paddingLeft="31.3dp"
+        android:text="@string/validate"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/edit_conf_pwd"
+        app:layout_constraintStart_toStartOf="@+id/edit_conf_pwd"
+        app:layout_constraintTop_toBottomOf="@+id/edit_conf_pwd" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

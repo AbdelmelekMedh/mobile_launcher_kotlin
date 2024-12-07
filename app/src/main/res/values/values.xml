@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding='utf-8' standalone='no'?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- java/com/google/android/gmscore/integ/client/base/res/values/colors.xml -->
+    <eat-comment/>
+    <color name="common_google_signin_btn_text_light_default">#90000000</color>
+    <!-- java/com/google/android/gmscore/integ/client/base/res/values/strings.xml -->
+    <eat-comment/>
+    <!-- java/com/google/android/gmscore/integ/client/base/res/values/attrs.xml -->
+    <eat-comment/>
+    <declare-styleable name="LoadingImageView"><attr name="imageAspectRatioAdjust">
+        <enum name="none" value="0"/>
+
+        <enum name="adjust_width" value="1"/>
+
+        <enum name="adjust_height" value="2"/>
+
+    </attr>
+
+        <attr name="imageAspectRatio" format="float"/>
+
+        <attr name="circleCrop" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="SignInButton"><attr name="buttonSize" format="reference">
+        <enum name="standard" value="0"/>
+
+        <enum name="wide" value="1"/>
+
+        <enum name="icon_only" value="2"/>
+
+    </attr>
+        <attr name="colorScheme" format="reference">
+            <enum name="dark" value="0"/>
+
+            <enum name="light" value="1"/>
+
+            <enum name="auto" value="2"/>
+
+        </attr>
+
+        <attr name="scopeUris" format="reference|string"/>
+    </declare-styleable>
+
+</resources>

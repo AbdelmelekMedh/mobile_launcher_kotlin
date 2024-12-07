@@ -1,0 +1,27 @@
+query leisures_mobile {
+    leisures_mobile {
+        description {
+            default
+            ar
+            en
+            fr
+        }
+        title {
+            default
+            ar
+            en
+            fr
+        }
+        id
+        image
+        price {
+            amount
+            currency
+            hasDiscount
+            discountType
+            discountAmount
+        }
+        from
+        to
+    }
+}

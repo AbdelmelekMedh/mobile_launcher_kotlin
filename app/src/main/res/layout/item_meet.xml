@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_card"
+    android:layout_width="match_parent"
+    android:layout_height="155dp"
+    android:layout_marginHorizontal="5dp"
+    android:layout_marginVertical="3dp"
+    android:backgroundTint="#947e6b"
+    android:layoutDirection="ltr"
+    android:orientation="vertical"
+    app:cardCornerRadius="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+
+        <ImageView
+            android:id="@+id/room_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:adjustViewBounds="true"
+            android:alpha="0.3"
+            android:background="@drawable/calque"
+            android:scaleType="centerCrop" />
+
+        <RatingBar
+            android:id="@+id/rating_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="-45dp"
+            android:layout_marginBottom="-5dp"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:progressBackgroundTint="@android:color/white"
+            android:progressTint="#f6a800"
+            android:rating="2"
+            android:scaleX=".5"
+            android:scaleY=".5"
+            android:visibility="gone"
+            android:secondaryProgressTint="#f6a800" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/room_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/champagne_limousines_thickbold"
+                android:textColor="@color/white"
+                android:singleLine="true"
+                android:textSize="22dp" />
+
+
+            <TextView
+                android:id="@+id/room_nbr_person"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/champagne_limousines_thickbold"
+                android:textColor="@color/white"
+                android:layout_marginTop="5dp"
+                android:singleLine="true"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="@font/interstate_bold"
+            android:singleLine="true"
+            android:textColor="#739147"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/oldprice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@id/price"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="@font/interstate_bold"
+            android:singleLine="true"
+            android:textColor="@color/red"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

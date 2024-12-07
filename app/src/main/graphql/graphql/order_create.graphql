@@ -1,0 +1,12 @@
+mutation order_create($input: CreateOrderInput!) {
+    order_create(input: $input) {
+        id
+        orderNumber
+        quantity
+        status
+        total {
+            amount
+            currency
+        }
+    }
+}

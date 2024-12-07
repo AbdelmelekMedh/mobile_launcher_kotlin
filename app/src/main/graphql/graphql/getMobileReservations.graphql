@@ -1,0 +1,49 @@
+query getMobileReservations($id: String!) {
+    getMobileReservations(id: $id) {
+        ReservationNumber
+        numberOfPerson
+        date
+        reservationType
+        status
+        eateryservice {
+            title {
+                ar
+                default
+                en
+                fr
+            }
+        }
+        eventService {
+            title {
+                ar
+                default
+                en
+                fr
+            }
+        }
+        wellBeingService {
+            title {
+                ar
+                default
+                en
+                fr
+            }
+        }
+        leisureService {
+            title {
+                ar
+                default
+                en
+                fr
+            }
+        }
+        meetingService {
+            title {
+                ar
+                default
+                fr
+                en
+            }
+        }
+    }
+}

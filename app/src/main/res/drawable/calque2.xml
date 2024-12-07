@@ -1,0 +1,25 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:height="200dp">
+        <shape>
+            <solid android:color="#5000ddff" />
+            <gradient
+                android:angle="90"
+                android:centerColor="@android:color/transparent"
+                android:centerY="0.9"
+                android:endColor="@android:color/black"
+                android:startColor="@android:color/transparent" />
+        </shape>
+    </item>
+
+    <item>
+        <shape>
+            <solid android:color="@color/colorPrimary" />
+            <gradient
+                android:angle="90"
+                android:centerColor="@android:color/transparent"
+                android:centerY="0.02"
+                android:endColor="@android:color/transparent"
+                android:startColor="@android:color/transparent" />
+        </shape>
+    </item>
+</layer-list>

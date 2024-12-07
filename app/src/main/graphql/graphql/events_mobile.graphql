@@ -1,0 +1,35 @@
+query events_mobile {
+    events_mobile {
+        description {
+            default
+            ar
+            en
+            fr
+        }
+        title {
+            default
+            ar
+            en
+            fr
+        }
+        id
+        location
+        phone {
+            isWhatsapp
+            number
+            prefix
+        }
+        picture
+        dateto
+        datefrom
+        status
+        price {
+            amount
+            currency
+            hasDiscount
+            discountType
+            discountAmount
+        }
+        singleDay
+    }
+}

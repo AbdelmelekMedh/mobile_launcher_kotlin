@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:fitsSystemWindows="true"
+    android:focusableInTouchMode="true"
+    android:layoutDirection="ltr"
+    tools:openDrawer="start">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/app_bar_main"
+            layout="@layout/app_bar_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:id="@+id/img_profile"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="-12dp"
+                android:layout_marginTop="0dp"
+                android:clickable="true"
+                android:elevation="30dp"
+                android:src="@drawable/ic_profile_open"
+                tools:ignore="MissingConstraints,NotSibling"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:id="@+id/chat_badge_notification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="-17dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/badge_item_count"
+                android:elevation="1dp"
+                android:visibility="gone"
+                android:fontFamily="@font/interstate_mono"
+                android:textAlignment="center"
+                android:textColor="#FFF"
+                android:textSize="10sp"
+                tools:ignore="MissingConstraints" />
+
+            <ImageView
+                android:id="@+id/img_chat"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="-12dp"
+                android:clickable="true"
+                android:visibility="visible"
+                android:src="@drawable/ic_chat"
+                tools:ignore="MissingConstraints,NotSibling"/>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_main"
+        app:itemIconTint="@drawable/drawer_item_color"
+        app:itemTextColor="@drawable/drawer_item_color"
+        app:menu="@menu/activity_main_drawer">
+
+        <ExpandableListView
+            android:id="@+id/exp_list_drawer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="280dp"
+            android:layout_marginBottom="125dp"
+            android:background="@android:color/transparent"
+            android:backgroundTint="#fff"
+            android:backgroundTintMode="multiply"
+            android:cacheColorHint="@color/colorPrimary"
+            android:childDivider="#fff"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="5dp"
+            android:fadingEdgeLength="1dp"
+            android:groupIndicator="@null"
+            android:listSelector="@android:color/transparent"
+            android:paddingTop="5dp"
+            android:paddingRight="50dp"
+            android:requiresFadingEdge="vertical"
+            android:scrollbarSize="0dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="80dp"
+            android:background="@color/transparent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/btn_tripadvisor"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="-40dp"
+                android:layout_marginBottom="0dp"
+                android:src="@drawable/tripadvisor_btn" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="210dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/btn_tripadvisor"
+                android:layout_marginLeft="2dp"
+                app:cardCornerRadius="30dp">
+
+                <RelativeLayout
+                    android:id="@+id/clear_data"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/ic_btn_clear"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="70dp"
+                        android:text="@string/drawer_item_clear_data"
+                        android:textAlignment="center"
+                        android:textSize="10sp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+    </com.google.android.material.navigation.NavigationView>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

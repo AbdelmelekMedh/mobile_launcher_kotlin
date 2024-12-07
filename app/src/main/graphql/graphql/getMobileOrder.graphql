@@ -1,0 +1,52 @@
+query getMobileOrders($id: String!) {
+    getMobileOrders(id: $id) {
+        id
+        orderNumber
+        quantity
+        createdAt
+        status
+        orderItems {
+            image
+            title {
+                default
+                en
+                fr
+                ar
+            }
+            price {
+                amount
+                currency
+                hasDiscount
+                discountType
+                discountAmount
+            }
+            quantity
+            status
+            categoryName {
+                default
+                en
+                fr
+                ar
+            }
+            item {
+                id
+                image
+                price {
+                    amount
+                    currency
+                }
+                title {
+                    ar
+                    default
+                    en
+                    fr
+                }
+            }
+        }
+        total {
+            amount
+            currency
+        }
+        rejectedSum
+    }
+}

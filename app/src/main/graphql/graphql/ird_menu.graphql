@@ -1,0 +1,37 @@
+query ird_menu($type: IrdCategoryEnum!) {
+    ird_menu(type: $type) {
+        id
+        title {
+            default
+            fr
+            en
+            ar
+        }
+        image
+        items {
+            id
+            image
+            title {
+                default
+                fr
+                en
+                ar
+            }
+            price {
+                amount
+                currency
+                hasDiscount
+                discountType
+                discountAmount
+            }
+            description {
+                default
+                en
+                ar
+                fr
+            }
+
+        }
+
+    }
+}

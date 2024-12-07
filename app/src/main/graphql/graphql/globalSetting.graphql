@@ -1,0 +1,43 @@
+query getGlobalSetting {
+    getGlobalSetting {
+        id
+        address
+        lightLogo
+        darkLogo
+        defaultLogo
+        cover
+        email
+        latitude
+        longitude
+        name {
+            ar
+            fr
+            default
+            en
+        }
+        phone {
+            isWhatsapp
+            number
+            prefix
+        }
+        fax {
+            isWhatsapp
+            number
+            prefix
+        }
+        rating
+        tripAdvisor
+        links {
+            facebook
+            youtube
+            website
+            linkedin
+            twitter
+        }
+        timeZone
+        autoRejectDelay
+        currency
+        createdAt
+        updatedAt
+    }
+}

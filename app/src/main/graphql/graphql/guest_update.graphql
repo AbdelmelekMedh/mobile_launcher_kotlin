@@ -1,0 +1,6 @@
+mutation guest_update($input: UpdateGuestInput!) {
+    guest_update(input: $input) {
+        id
+        email
+    }
+}

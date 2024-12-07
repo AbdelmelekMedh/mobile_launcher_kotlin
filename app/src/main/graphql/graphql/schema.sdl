@@ -1,0 +1,2104 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type ActivityLog {
+  changedItemId: String!
+  createdAt: DateTime
+  id: String
+  label: [Translation!]!
+  operationMakerId: String!
+  operationName: ActivityLogEnum!
+  updatedAt: DateTime
+  user: User
+}
+
+enum ActivityLogEnum {
+  addRole
+  cancel
+  changeItemStatus
+  changeReservationStatus
+  checkIn
+  checkOut
+  concierge_create
+  concierge_delete
+  concierge_update
+  device_create
+  device_delete
+  device_edit
+  eatery_category_create
+  eatery_category_delete
+  eatery_category_update
+  eatery_create
+  eatery_delete
+  eatery_item_create
+  eatery_item_delete
+  eatery_item_update
+  eatery_update
+  event_create
+  event_delete
+  event_update
+  guest_create
+  guest_delete
+  guest_reset_code
+  guest_update
+  ird_category_create
+  ird_category_delete
+  ird_category_update
+  ird_item_create
+  ird_item_delete
+  ird_item_update
+  leisure_create
+  leisure_delete
+  leisure_update
+  meeting_create
+  meeting_delete
+  meeting_update
+  role_create
+  role_delete
+  role_edit
+  room_create
+  room_delete
+  room_edit
+  update_checkOut
+  user_create
+  user_delete
+  user_update
+  wellBeing_category_create
+  wellBeing_category_delete
+  wellBeing_category_update
+  wellBeing_item_create
+  wellBeing_item_delete
+  wellBeing_item_update
+}
+
+type ActivityLogOutput {
+  list: [ActivityLog!]!
+  pagination: PaginationOutput!
+}
+
+type AgeRange {
+  maxAge: Float
+  minAge: Float
+}
+
+input AgeRangeInput {
+  maxAge: Float
+  minAge: Float
+}
+
+type Audience {
+  age: [AgeRange!]!
+  createdAt: DateTime
+  gender: [GenderEnum!]
+  id: String!
+  nationality: [CountryEnum!]!
+  title: String!
+  updatedAt: DateTime
+}
+
+type AudienceListOutput {
+  list: [Audience!]!
+  pagination: PaginationOutput!
+}
+
+type Auth {
+  confirmed: Boolean!
+  type: AuthTypeEnum
+}
+
+enum AuthTypeEnum {
+  password
+}
+
+input CategoryRankInput {
+  id: String!
+  rank: Float!
+}
+
+input ChangePasswordInput {
+  confirmationKey: String!
+  password: String!
+  passwordConfirmation: String!
+  userId: String!
+}
+
+type Clicks {
+  clicks: Float!
+  createdAt: DateTime
+  id: String!
+  itemId: String!
+  residenceId: String!
+  type: ServiceEnum!
+  updatedAt: DateTime
+}
+
+type Compaign {
+  audienceIds: [String!]!
+  createdAt: DateTime
+  endDate: DateTime
+  id: String!
+  pushNotificationId: String!
+  relatedAudiences: [Audience!]
+  relatedPushNotification: PushNotification
+  startDate: DateTime
+  updatedAt: DateTime
+}
+
+type CompaignListOutput {
+  list: [Compaign!]!
+  pagination: PaginationOutput!
+}
+
+type Concierge {
+  clicks: Float
+  createdAt: DateTime
+  description: Translation!
+  id: String!
+  image: String
+  listServices: TranslationServiceConcierge
+  showed: Boolean!
+  title: Translation!
+  updatedAt: DateTime
+  views: Float
+}
+
+type ConciergeListOutput {
+  list: [Concierge!]!
+  pagination: PaginationOutput!
+}
+
+type ConciergeRequest {
+  comment: String
+  concierge: Concierge
+  conciergeId: String
+  createdAt: DateTime
+  guest: Guest
+  id: String
+  requestNumber: String!
+  residence: Residence
+  residenceId: String
+  room: Room
+  status: ConciergeRequestStatusEnum!
+  subItem: String
+  updatedAt: DateTime
+}
+
+type ConciergeRequestListOutput {
+  list: [ConciergeRequest!]!
+  pagination: PaginationOutput!
+}
+
+enum ConciergeRequestStatusEnum {
+  Accepted
+  Cancelled
+  Rejected
+  Resolved
+  Waiting
+}
+
+type Conversation {
+  chats: [Message!]
+  commet: Float
+  createdAt: DateTime
+  guest: Guest
+  guestId: String!
+  id: String
+  rating: Float
+  residence: Residence
+  resolved: Boolean!
+  room: Room
+  unread_number: Float
+  unread_number_for_guest: Float
+  updatedAt: DateTime
+}
+
+enum CountryEnum {
+  AD
+  AE
+  AF
+  AG
+  AI
+  AL
+  AM
+  AO
+  AQ
+  AR
+  AS
+  AT
+  AU
+  AW
+  AX
+  AZ
+  BA
+  BB
+  BD
+  BE
+  BF
+  BG
+  BH
+  BI
+  BJ
+  BL
+  BM
+  BN
+  BO
+  BR
+  BS
+  BT
+  BW
+  BY
+  BZ
+  CA
+  CC
+  CD
+  CF
+  CG
+  CH
+  CI
+  CK
+  CL
+  CM
+  CN
+  CO
+  CR
+  CU
+  CV
+  CX
+  CY
+  CZ
+  DE
+  DJ
+  DK
+  DM
+  DO
+  DZ
+  EC
+  EE
+  EG
+  ER
+  ES
+  ET
+  FI
+  FJ
+  FK
+  FM
+  FO
+  FR
+  GA
+  GB
+  GD
+  GE
+  GF
+  GG
+  GH
+  GI
+  GL
+  GM
+  GN
+  GP
+  GQ
+  GR
+  GS
+  GT
+  GU
+  GW
+  GY
+  HK
+  HN
+  HR
+  HT
+  HU
+  ID
+  IE
+  IL
+  IM
+  IN
+  IO
+  IQ
+  IR
+  IS
+  IT
+  JE
+  JM
+  JO
+  JP
+  KE
+  KG
+  KH
+  KI
+  KM
+  KN
+  KP
+  KR
+  KW
+  KY
+  KZ
+  LA
+  LB
+  LC
+  LI
+  LK
+  LR
+  LS
+  LT
+  LU
+  LV
+  LY
+  MA
+  MC
+  MD
+  ME
+  MF
+  MG
+  MH
+  MK
+  ML
+  MM
+  MN
+  MO
+  MP
+  MQ
+  MR
+  MS
+  MT
+  MU
+  MV
+  MW
+  MX
+  MY
+  MZ
+  NA
+  NC
+  NE
+  NF
+  NG
+  NI
+  NL
+  NO
+  NP
+  NR
+  NU
+  NZ
+  OM
+  PA
+  PE
+  PF
+  PG
+  PH
+  PK
+  PL
+  PM
+  PN
+  PR
+  PS
+  PT
+  PW
+  PY
+  QA
+  RE
+  RO
+  RS
+  RU
+  RW
+  SA
+  SB
+  SC
+  SD
+  SE
+  SG
+  SH
+  SI
+  SJ
+  SK
+  SL
+  SM
+  SN
+  SO
+  SR
+  SS
+  ST
+  SV
+  SY
+  SZ
+  TC
+  TD
+  TG
+  TH
+  TJ
+  TK
+  TL
+  TM
+  TN
+  TO
+  TR
+  TT
+  TV
+  TW
+  TZ
+  UA
+  UG
+  US
+  UY
+  UZ
+  VA
+  VC
+  VE
+  VG
+  VI
+  VN
+  VU
+  WF
+  WS
+  YE
+  YT
+  ZA
+  ZM
+  ZW
+}
+
+input CreateAudienceInput {
+  age: [AgeRangeInput!]!
+  gender: [GenderEnum!]!
+  nationality: [CountryEnum!]!
+  title: String!
+}
+
+input CreateCompaignInput {
+  audienceIds: [String!]!
+  endDate: DateTime!
+  pushNotificationId: String
+  startDate: DateTime!
+}
+
+input CreateConciergeInput {
+  description: TranslationInput!
+  listServices: TranslationInputConciergeService
+  title: TranslationInput!
+}
+
+input CreateConciergeRequestInput {
+  comment: String
+  conciergeId: String!
+  residenceId: String!
+  subItem: String
+}
+
+input CreateConversationInput {
+  guestId: String!
+  message: String!
+}
+
+input CreateDeviceInput {
+  brand: String!
+  callLimit: Float!
+  dataLimit: Float!
+  description: String
+  gsfId: String
+  hasGsfId: Boolean!
+  hotspotPassword: String!
+  hotspotSSID: String!
+  imei: Float!
+  model: String!
+  sim: PhoneInput!
+  type: DeviceTypeEnum!
+}
+
+input CreateDeviceMobileInput {
+  OsVersion: String
+  brand: String!
+  gsfId: String
+  model: String
+  operating_system: String
+  platform: String
+}
+
+input CreateEateryCategoryInput {
+  description: TranslationInput!
+  eateryId: String!
+  title: TranslationInput!
+  type: String!
+}
+
+input CreateEateryItemInput {
+  categoryId: String!
+  description: TranslationInput!
+  eateryId: String!
+  price: PriceInput!
+  title: TranslationInput!
+}
+
+input CreateEventInput {
+  datefrom: DateTime!
+  dateto: DateTime!
+  description: TranslationInput!
+  location: String
+  phone: PhoneInput!
+  price: PriceInput
+  singleDay: Boolean!
+  status: EventStatus!
+  title: TranslationInput!
+}
+
+input CreateExtraFeeInput {
+  invoiceId: String!
+  price: PriceInput
+  reason: TranslationInput!
+}
+
+input CreateGuestInput {
+  birthdate: DateTime!
+  cin: String
+  country: CountryEnum!
+  email: String!
+  firstName: String!
+  gender: GenderEnum!
+  identity: IdentityEnum
+  lastName: String!
+  passport: PassportInput
+  phone: PhoneInput!
+}
+
+input CreateIrdCategoryInput {
+  description: TranslationInput!
+  title: TranslationInput!
+  type: IrdCategoryEnum!
+}
+
+input CreateIrdItemInput {
+  categoryId: String!
+  description: TranslationInput!
+  price: PriceInput!
+  title: TranslationInput!
+}
+
+input CreateLeisuresInput {
+  description: TranslationInput!
+  from: String!
+  price: PriceInput!
+  title: TranslationInput!
+  to: String!
+}
+
+input CreateMeetingInput {
+  capacity: Float!
+  description: TranslationInput!
+  price: PriceInput!
+  title: TranslationInput!
+}
+
+input CreateMessageInput {
+  conversationId: String!
+  guestMessage: Boolean!
+  message: String!
+  senderId: String!
+}
+
+input CreateOrderInput {
+  items: [OrderItemInput!]!
+  residenceId: String!
+}
+
+input CreatePushNotificationInput {
+  description: TranslationInput!
+  title: TranslationInput!
+}
+
+input CreateReservationInput {
+  date: DateTime!
+  itemId: String
+  numberOfPerson: Float!
+  reservationType: ReservationTypeEnum!
+  residenceId: String!
+}
+
+input CreateResidenceInput {
+  deviceId: String
+  from: DateTime!
+  guestId: String
+  roomId: String
+  to: DateTime!
+}
+
+input CreateRoleInput {
+  description: String
+  permissions: [PermissionsEnum!]
+  title: String!
+}
+
+input CreateRoomInput {
+  capacity: Float!
+  deviceId: String
+  floor: Float!
+  number: Float!
+  section: Float!
+  type: RoomTypeEnum!
+}
+
+input CreateUserInput {
+  birthdate: DateTime!
+  cin: String
+  country: CountryEnum!
+  email: String!
+  firstName: String!
+  gender: GenderEnum!
+  identity: IdentityEnum
+  lastName: String!
+  passport: PassportInput
+  phone: PhoneInput!
+  roleId: String
+  staff_device: String
+  type: String!
+}
+
+input CreateWellBeingCategoryInput {
+  description: TranslationInput!
+  title: TranslationInput!
+}
+
+input CreateWellBeingItemInput {
+  categoryId: String!
+  description: TranslationInput!
+  price: PriceInput!
+  title: TranslationInput!
+}
+
+enum CurrencyEnum {
+  eur
+  tnd
+  usd
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Device {
+  OsVersion: String
+  brand: String
+  callLimit: Float
+  createdAt: DateTime
+  dataLimit: Float
+  description: String
+  gsfId: String
+  hasGsfId: Boolean
+  hotspotPassword: String
+  hotspotSSID: String
+  id: String
+  image: String
+  imei: Float
+  model: String
+  operating_system: String
+  platform: String
+  room: Room
+  sim: Phone
+  status: DeviceStatusEnum
+  type: DeviceTypeEnum!
+  updatedAt: DateTime
+}
+
+type DeviceListOutput {
+  list: [Device!]!
+  pagination: PaginationOutput!
+}
+
+enum DeviceStatusEnum {
+  available
+  damaged
+  in_use
+  lost
+}
+
+enum DeviceTypeEnum {
+  phone
+  staff_phone
+  staff_tablet
+  tablet
+}
+
+enum DiscountTypeEnum {
+  amount
+  percentege
+}
+
+type EateriesCategory {
+  clicks: Float
+  createdAt: DateTime
+  description: Translation!
+  eateryId: String
+  id: String!
+  image: String
+  items: [EateriesItem!]
+  rank: Float
+  showed: Boolean
+  title: Translation!
+  type: EateryCategoryEnum
+  updatedAt: DateTime
+  views: Float
+}
+
+type EateriesCategoryListOutput {
+  list: [EateriesCategory!]!
+  pagination: PaginationOutput!
+}
+
+type EateriesItem {
+  category: EateriesCategory
+  categoryId: String
+  clicks: Float
+  createdAt: DateTime
+  description: Translation!
+  eateryId: String
+  id: String!
+  image: String
+  price: Price
+  showed: Boolean
+  title: Translation!
+  updatedAt: DateTime
+  views: Float
+}
+
+type Eatery {
+  categories: [EateriesCategory!]
+  clicks: Float
+  createdAt: DateTime
+  description: Translation!
+  id: String!
+  image: String
+  ratingAverage: Float
+  reviews: [Review!]
+  shift: Shift
+  showed: Boolean
+  speciality: Translation
+  starsNumber: StarsNumberOutput
+  title: Translation!
+  updatedAt: DateTime
+  views: Float
+}
+
+enum EateryCategoryEnum {
+  drink
+  food
+}
+
+input EateryItemFilters {
+  categoryIds: [String!]
+}
+
+type EateryItemListOutput {
+  list: [EateriesItem!]!
+  pagination: PaginationOutput!
+}
+
+type EateryListOutput {
+  list: [Eatery!]!
+  pagination: PaginationOutput!
+}
+
+type Event {
+  clicks: Float
+  createdAt: DateTime
+  datefrom: DateTime!
+  dateto: DateTime
+  description: Translation!
+  id: String!
+  location: String!
+  phone: Phone
+  picture: String
+  price: Price
+  showed: Boolean!
+  singleDay: Boolean!
+  status: EventStatus
+  title: Translation!
+  updatedAt: DateTime
+  views: Float
+}
+
+type EventListOutput {
+  list: [Event!]!
+  pagination: PaginationOutput!
+}
+
+enum EventStatus {
+  free
+  paid
+}
+
+type ExtraFee {
+  createdAt: DateTime
+  id: String!
+  invoiceId: String
+  price: Price!
+  reason: Translation!
+  updatedAt: DateTime
+}
+
+enum GenderEnum {
+  female
+  male
+  other
+}
+
+input GlobalInput {
+  address: String!
+  autoRejectDelay: Float
+  currency: String!
+  defaultLanguage: String!
+  description: String!
+  email: String!
+  fax: PhoneInput!
+  fixNumber: PhoneInput!
+  latitude: String!
+  links: LinksInput!
+  longitude: String!
+  name: TranslationInput!
+  nightPrice: PriceInput
+  phone: PhoneInput!
+  rating: Float!
+  timeZone: String!
+  tripAdvisor: String!
+}
+
+type GlobalSettings {
+  address: String!
+  autoRejectDelay: Float
+  cover: String!
+  createdAt: DateTime
+  currency: String
+  darkLogo: String
+  defaultLanguage: String!
+  defaultLogo: String
+  description: String!
+  email: String!
+  fax: Phone
+  fixNumber: Phone
+  id: String!
+  latitude: String!
+  lightLogo: String
+  links: Links
+  longitude: String!
+  name: Translation!
+  nightPrice: Price
+  phone: Phone
+  rating: Float!
+  timeZone: String
+  tripAdvisor: String!
+  updatedAt: DateTime
+  version: String
+}
+
+type Gsi {
+  createdAt: DateTime
+  displayAfter: DateTime
+  guest: Guest
+  id: String!
+  primary: Boolean!
+  question: String!
+  rate: String
+  residenceId: String!
+  room: Room
+  selectedAnswers: [String!]
+  skiped: Boolean
+  updatedAt: DateTime
+}
+
+input GsiFilters {
+  primary: Boolean
+  question: GsiQuestionsEnum
+  rate: GsiRateEnum
+}
+
+type GsiListtOutput {
+  list: [Gsi!]!
+  pagination: PaginationOutput!
+}
+
+enum GsiQuestionsEnum {
+  app_review
+  checkin
+  food
+  guest_staff
+  hotel_review
+  room
+}
+
+enum GsiRateEnum {
+  flop
+  top
+}
+
+type Guest {
+  birthdate: DateTime!
+  cin: String
+  country: String!
+  createdAt: DateTime
+  email: String!
+  firstName: String!
+  gender: String!
+  hasUnresolvedConversation: Boolean
+  id: String!
+  identity: String!
+  lastName: String!
+  passport: Passport
+  phone: Phone
+  profilePicture: String
+  residence: Residence
+  room: Room
+  updatedAt: DateTime
+}
+
+input GuestFilters {
+  gender: GenderEnum
+  guestStatus: GuestStatusEnum
+}
+
+type GuestListOutput {
+  list: [Guest!]!
+  pagination: PaginationOutput!
+}
+
+type GuestStats {
+  checkedInNumber: Float!
+  todayArrivedNumber: Float!
+  todayDepartedNumber: Float!
+}
+
+enum GuestStatusEnum {
+  arrivedToDay
+  checkInd
+  departedToDay
+}
+
+enum IdentityEnum {
+  cin
+  passport
+}
+
+input InitializeGuestCodeInput {
+  confirmationPasscode: String!
+  guestId: String!
+  passcode: String!
+}
+
+type Invoice {
+  createdAt: DateTime
+  extraFees: [ExtraFee!]
+  hotelAddress: String!
+  hotelName: Translation!
+  id: String!
+  invoiceNumber: String!
+  invoiceResidences: [InvoiceResidences!]
+  month: Float!
+  nightPrice: Price!
+  totalNights: Float!
+  totalPrice: Price!
+  updatedAt: DateTime
+  year: Float!
+}
+
+type InvoiceListOutput {
+  list: [Invoice!]!
+  pagination: PaginationOutput!
+}
+
+type InvoiceResidences {
+  device: Device
+  guest: Guest
+  numberOfNights: Float
+  residence: Residence
+  room: Room
+}
+
+type IrdCategory {
+  clicks: Float
+  createdAt: DateTime
+  description: Translation!
+  id: String!
+  image: String
+  items: [IrdItem!]
+  rank: Float
+  showed: Boolean!
+  title: Translation!
+  type: IrdCategoryEnum
+  updatedAt: DateTime
+  views: Float
+}
+
+enum IrdCategoryEnum {
+  drink
+  food
+}
+
+type IrdCategoryListOutput {
+  list: [IrdCategory!]!
+  pagination: PaginationOutput!
+}
+
+input IrdCategoryRankInput {
+  id: String!
+  rank: Float!
+}
+
+input IrdICategoriesFilters {
+  type: IrdCategoryEnum
+}
+
+type IrdItem {
+  category: IrdCategory
+  categoryId: String
+  clicks: Float
+  createdAt: DateTime
+  description: Translation!
+  id: String!
+  image: String
+  price: Price
+  showed: Boolean
+  title: Translation!
+  updatedAt: DateTime
+  views: Float
+}
+
+input IrdItemFilters {
+  categoryIds: [String!]
+  type: IrdCategoryEnum
+}
+
+type IrdItemListOutput {
+  list: [IrdItem!]!
+  pagination: PaginationOutput!
+}
+
+type Leisures {
+  clicks: Float
+  createdAt: DateTime
+  description: Translation!
+  from: String
+  id: String!
+  image: String
+  price: Price
+  showed: Boolean!
+  title: Translation!
+  to: String
+  updatedAt: DateTime
+  views: Float
+}
+
+type LeisuresListOutput {
+  list: [Leisures!]!
+  pagination: PaginationOutput!
+}
+
+type Links {
+  facebook: String
+  linkedin: String
+  twitter: String
+  website: String
+  youtube: String
+}
+
+input LinksInput {
+  facebook: String
+  linkedin: String
+  twitter: String
+  website: String
+  youtube: String
+}
+
+input LoginInput {
+  email: String!
+  password: String!
+  rememberMe: Boolean
+}
+
+type LoginOutput {
+  authorization: String!
+  profile: User!
+}
+
+type Meeting {
+  capacity: Float!
+  clicks: Float
+  createdAt: DateTime
+  description: Translation!
+  id: String!
+  picture: String
+  price: Price
+  showed: Boolean!
+  title: Translation!
+  updatedAt: DateTime
+  views: Float
+}
+
+type MeetingListOutput {
+  list: [Meeting!]!
+  pagination: PaginationOutput!
+}
+
+type Message {
+  guestMessage: Boolean!
+  id: String
+  message: String!
+  read: Boolean
+  sender: Guest
+  senderId: String!
+  sendingTime: DateTime
+}
+
+type Mutation {
+  addExtraFee(input: CreateExtraFeeInput!): ExtraFee!
+  addRole(id: String!, roleId: String!): User
+  cancel(id: String!): Residence!
+  cancel_order(orderid: String!): Order
+  changeChatStatus(id: String!): Boolean!
+  changeItemStatus(id: String, status: OrderItemStatusEnum!): Boolean!
+  changeRequestStatus(id: String!, status: ConciergeRequestStatusEnum!): Boolean!
+  changeReservationStatus(id: String, status: ReservationStatusEnum!): Boolean!
+  change_notif_status(id: String): Boolean!
+  checkIn(input: CreateResidenceInput!): Residence!
+  checkOut(residenceId: String!): Residence
+  click(itemId: String!, residenceId: String!, service: ServiceEnum!): Clicks!
+  concierge_create(image: Upload, input: CreateConciergeInput!): Concierge!
+  concierge_delete(id: String!): Concierge!
+  concierge_display(id: String!, isShowed: Boolean!): Concierge
+  concierge_update(input: UpdateConciergeInput!, picture: Upload): Concierge!
+  conversation_create(input: CreateConversationInput!, isFromGuest: Boolean!): Conversation!
+  createConciergeRequest(createConciergeRequestInput: CreateConciergeRequestInput!): ConciergeRequest!
+  create_audience(input: CreateAudienceInput!): Audience!
+  create_compaign(input: CreateCompaignInput!): Compaign!
+  create_push_notification(input: CreatePushNotificationInput!, pushNotifMedia: Upload): PushNotification!
+  delete_audience(id: String!): Audience!
+  delete_compaign(id: String!): Compaign!
+  delete_pushNotification(id: String!): PushNotification!
+  device_create(image: Upload, input: CreateDeviceInput!): Device
+  device_delete(id: String!): Device
+  device_edit(image: Upload, input: UpdateDeviceInput!): Device
+  eatery_category_create(image: Upload, input: CreateEateryCategoryInput!): EateriesCategory!
+  eatery_category_delete(id: String!): EateriesCategory!
+  eatery_category_display(id: String!, isShowed: Boolean!): EateriesCategory
+  eatery_category_update(image: Upload, input: UpdateEateryCategoryInput!): EateriesCategory!
+  eatery_category_update_order(categoryRanks: [CategoryRankInput!]): Boolean!
+  eatery_create(description: TranslationInput!, image: Upload, shift: ShiftInput, speciality: TranslationInput!, title: TranslationInput!): Eatery!
+  eatery_delete(id: String!): Eatery!
+  eatery_display(id: String!, isShowed: Boolean!): Eatery
+  eatery_item_create(image: Upload, input: CreateEateryItemInput!): EateriesItem!
+  eatery_item_delete(id: String!): EateriesItem!
+  eatery_item_display(id: String!, isShowed: Boolean!): EateriesItem
+  eatery_item_update(image: Upload, input: UpdateEateryItemInput!): EateriesItem!
+  eatery_update(description: TranslationInput!, id: String!, image: Upload, shift: ShiftInput, speciality: TranslationInput!, title: TranslationInput!): Eatery!
+  event_create(input: CreateEventInput!, picture: Upload): Event
+  event_delete(id: String!): Event!
+  event_display(id: String!, isShowed: Boolean!): Event
+  event_update(input: UpdateEventInput!, picture: Upload): Event!
+  extra_fee_delete(id: String!): ExtraFee!
+  generateInvoice(month: Float!, year: Float!): Invoice!
+  guest_create(input: CreateGuestInput!, picture: Upload): Guest!
+  guest_delete(id: String!): Guest!
+  guest_initialize_code(input: InitializeGuestCodeInput!): Boolean!
+  guest_reset_code(guestId: String!, residenceId: String!): Boolean
+  guest_update(input: UpdateGuestInput!, picture: Upload): Guest!
+  ird_category_create(image: Upload, input: CreateIrdCategoryInput!): IrdCategory!
+  ird_category_delete(id: String!): IrdCategory
+  ird_category_display(id: String!, isShowed: Boolean!): IrdCategory
+  ird_category_update(image: Upload, input: UpdateIrdCategoryInput!): IrdCategory!
+  ird_category_update_order(categoryRanks: [IrdCategoryRankInput!]): Boolean!
+  ird_item_create(image: Upload, input: CreateIrdItemInput!): IrdItem!
+  ird_item_delete(id: String!): IrdItem
+  ird_item_display(id: String!, isShowed: Boolean!): IrdItem
+  ird_item_update(image: Upload, input: UpdateIrdItemInput!): IrdItem!
+  leisure_create(image: Upload, input: CreateLeisuresInput!): Leisures!
+  leisure_delete(id: String!): Leisures!
+  leisure_display(id: String!, isShowed: Boolean!): Leisures
+  leisure_update(input: UpdateLeisuresInput!, picture: Upload): Leisures!
+  mark_all_as_read(conversationId: String!, isFromGuest: Boolean!): Boolean!
+  mark_all_as_read_notif: Boolean!
+  meeting_create(input: CreateMeetingInput!, picture: Upload): Meeting!
+  meeting_delete(id: String!): Meeting!
+  meeting_display(id: String!, isShowed: Boolean!): Meeting
+  meeting_update(input: UpdateMeetingInput!, picture: Upload): Meeting!
+  message_send(input: CreateMessageInput!): Message!
+  mobile_device_create(input: CreateDeviceMobileInput!, token: String!): Device
+  notif_delete(id: String): WebNotif!
+  order_create(input: CreateOrderInput!): Order
+  password_change(input: ChangePasswordInput!): LoginOutput
+  postMessage(message: String!): String!
+  rateConversation(comment: Float!, id: String!, rating: Float!): Conversation!
+  rateServiceMobile(comment: String!, itemId: String!, rating: Float!, residenceId: String!, type: ServiceEnum!): Review!
+  reservation_create(input: CreateReservationInput!): Reservation!
+  role_create(input: CreateRoleInput!): Role
+  role_delete(id: String!): Role
+  role_edit(input: UpdateRoleInput!): Role
+  room_create(input: CreateRoomInput!): Room
+  room_delete(id: String!): Room
+  room_edit(input: UpdateRoomInput!): Room
+  setGlobalSetting(cover: Upload, darkLogo: Upload, defaultTheme: String, globalInput: GlobalInput, lightLogo: Upload): GlobalSettings!
+  submitReview(input: SubmitReviewInput!): Boolean
+  update_audience(input: UpdateAudienceInput!): Audience!
+  update_checkOut(date: DateTime!, id: String!): Residence!
+  update_compaign(input: UpdateCompaignInput!): Compaign!
+  update_push_notification(input: UpdatePushNotificationInput!, pushNotifMedia: Upload): PushNotification!
+  user_create(input: CreateUserInput!, picture: Upload): User!
+  user_delete(id: String!): User!
+  user_update(input: UpdateUserInput!, picture: Upload): User!
+  user_update_password(currentPassword: String, newPassword: String): Boolean!
+  user_update_profile(input: UpdateCurrentUserInput!, picture: Upload): User!
+  wellBeing_category_create(image: Upload, input: CreateWellBeingCategoryInput!): WellBeingCategory!
+  wellBeing_category_delete(id: String!): WellBeingCategory
+  wellBeing_category_display(id: String!, isShowed: Boolean!): WellBeingCategory
+  wellBeing_category_update(image: Upload, input: UpdateWellBeingCategoryInput!): WellBeingCategory!
+  wellBeing_item_create(image: Upload, input: CreateWellBeingItemInput!): WellBeingItem!
+  wellBeing_item_delete(id: String!): WellBeingItem
+  wellBeing_item_display(id: String!, isShowed: Boolean!): WellBeingItem
+  wellBeing_item_update(image: Upload, input: UpdateWellBeingItemInput!): WellBeingItem!
+}
+
+type Order {
+  createdAt: DateTime
+  guest: Guest
+  id: String!
+  irditems: [IrdItem!]
+  orderItems: [OrderItem!]
+  orderNumber: String!
+  quantity: Float
+  rejectedSum: String
+  residence: Residence
+  residenceId: String!
+  room: Room
+  status: OrderItemStatusEnum
+  total: Price
+  updatedAt: DateTime
+}
+
+type OrderItem {
+  categoryName: Translation
+  createdAt: DateTime
+  id: String!
+  image: String!
+  irdItemId: String!
+  item: IrdItem
+  orderId: String!
+  price: Price!
+  quantity: Float!
+  status: OrderItemStatusEnum!
+  title: Translation!
+  updatedAt: DateTime
+}
+
+input OrderItemInput {
+  irdItemId: String!
+  quantity: Float!
+}
+
+enum OrderItemStatusEnum {
+  cancelled
+  delivered
+  in_delivery
+  in_preparation
+  in_progress
+  ready
+  rejected
+  waiting
+}
+
+type OrderListOutput {
+  list: [Order!]!
+  pagination: PaginationOutput!
+}
+
+input PaginationInput {
+  page: Float!
+  size: Float!
+}
+
+type PaginationOutput {
+  page: Float!
+  size: Float!
+  total: Float!
+  totalPages: Float!
+}
+
+type Passport {
+  expiry: DateTime
+  number: String
+}
+
+input PassportInput {
+  expiry: DateTime
+  number: String
+}
+
+enum PermissionsEnum {
+  activity_read
+  concierge_create
+  concierge_delete
+  concierge_read
+  concierge_update
+  customer_service_read
+  device_read
+  eatery_create
+  eatery_delete
+  eatery_read
+  eatery_update
+  employee_create
+  employee_delete
+  employee_read
+  employee_update
+  event_create
+  event_delete
+  event_read
+  event_update
+  global_settings_read
+  global_settings_update
+  guest_check_in
+  guest_check_out
+  guest_create
+  guest_delete
+  guest_read
+  guest_update
+  ird_create
+  ird_delete
+  ird_read
+  ird_update
+  leisure_create
+  leisure_delete
+  leisure_read
+  leisure_update
+  meeting_create
+  meeting_delete
+  meeting_read
+  meeting_update
+  order_change_status
+  order_read
+  reservation_change_status
+  reservation_read
+  role_create
+  role_delete
+  role_read
+  role_update
+  room_create
+  room_delete
+  room_read
+  room_update
+  wellbeing_create
+  wellbeing_delete
+  wellbeing_read
+  wellbeing_update
+}
+
+type Phone {
+  isWhatsapp: Boolean
+  number: String
+  prefix: CountryEnum
+}
+
+input PhoneInput {
+  isWhatsapp: Boolean
+  number: String
+  prefix: CountryEnum
+}
+
+type PhoneNotif {
+  conciergeRequestId: String
+  conversationId: String
+  createdAt: DateTime
+  guest: Guest
+  id: String!
+  mobileConciergeRequest: ConciergeRequest
+  mobileOrder: Order
+  mobileReservation: Reservation
+  order: Order
+  orderId: String
+  orderItemId: String
+  passCode: String
+  reservation: Reservation
+  reservationId: String
+  residence: Residence
+  residenceId: String
+  type: PhoneNotifTypeEnum!
+  updatedAt: DateTime
+}
+
+enum PhoneNotifTypeEnum {
+  chat_resolved
+  check_in
+  check_out
+  check_out_soon
+  check_today
+  concierge_request_accept
+  concierge_request_reject
+  order
+  order_delivered
+  order_in_delivery
+  order_in_progress
+  order_item_rejected
+  order_ready
+  order_rejected
+  reservation
+  reset_passcode
+  resevation_accept
+  resevation_reject
+}
+
+type Price {
+  amount: Float!
+  currency: String!
+  discountAmount: Float
+  discountType: DiscountTypeEnum
+  hasDiscount: Boolean
+}
+
+input PriceInput {
+  amount: Float
+  currency: CurrencyEnum
+  discountAmount: Float
+  discountType: DiscountTypeEnum
+  hasDiscount: Boolean
+}
+
+type PushNotification {
+  createdAt: DateTime
+  description: Translation!
+  id: String!
+  media: String!
+  title: Translation!
+  updatedAt: DateTime
+}
+
+type PushNotificationListOutput {
+  list: [PushNotification!]!
+  pagination: PaginationOutput!
+}
+
+type Query {
+  activityLogs(pagination: PaginationInput!, search: String): ActivityLogOutput
+  alert_unread_number: Float!
+  all_roles: [Role!]!
+  audience(id: String!): Audience
+  audiences(pagination: PaginationInput!, search: String!): AudienceListOutput
+  availble_devices: Float
+  cancelled_order: Float
+  checkGuestPassword(guestId: String!, password: String!): Boolean
+  checkedInGuests(search: String): [Guest!]!
+  compaign(id: String!): Compaign
+  compaigns(pagination: PaginationInput!, search: String!): CompaignListOutput
+  concierge(id: String!): Concierge
+  conciergeList_mobile: [Concierge!]
+  conciergeRequests(pagination: PaginationInput!, search: String): ConciergeRequestListOutput
+  concierges(pagination: PaginationInput!, search: String!): ConciergeListOutput
+  confirmation_key_validation(input: ValidateConfirmationKeyInput!): User
+  conversation(id: String!): Conversation
+  conversations(onlyUnread: Boolean!, resolved: Boolean, search: String!): [Conversation!]
+  delivered_order: Float
+  device(id: String!): Device
+  device_byGsfId(gsfId: String!): Device
+  devices(pagination: PaginationInput!, search: String, status: DeviceStatusEnum): DeviceListOutput
+  devices_available: [Device!]
+  eateries(pagination: PaginationInput!, search: String): EateryListOutput!
+  eateriesMobile: [Eatery!]
+  eatery(id: String!): Eatery!
+  eateryMobile(id: String!): Eatery!
+  eatery_categories(eateryId: String!, pagination: PaginationInput!, search: String): EateriesCategoryListOutput!
+  eatery_categories_all(eateryId: String!): [EateriesCategory!]!
+  eatery_category(id: String!): EateriesCategory!
+  eatery_drink_categories(eateryId: String!): [EateriesCategory!]!
+  eatery_food_categories(eateryId: String!): [EateriesCategory!]!
+  eatery_item(id: String!): EateriesItem!
+  eatery_items(eateryId: String!, filters: EateryItemFilters, pagination: PaginationInput!, search: String): EateryItemListOutput!
+  event(id: String!): Event
+  event_mobile(id: String!): Event
+  events(pagination: PaginationInput!, search: String!): EventListOutput
+  events_mobile: [Event!]
+  flopRatings(pagination: PaginationInput!): ReviewsListOutput!
+  generate_token: String
+  getGlobalSetting: GlobalSettings
+  getMobileOrders(id: String!): [Order!]
+  getMobileReservations(id: String!): [Reservation!]
+  gsiAvailableQuestions(residenceId: String!): [Gsi!]
+  gsiReviews(filters: GsiFilters!, pagination: PaginationInput!, search: String!): GsiListtOutput
+  guest(id: String!): Guest
+  guests(filters: GuestFilters!, pagination: PaginationInput!, search: String): GuestListOutput!
+  guests_stats: GuestStats
+  in_delivery_order: Float
+  in_progress_order: Float
+  in_use_devices: Float
+  invoice(id: String!): Invoice!
+  invoices(pagination: PaginationInput!): InvoiceListOutput
+  ird_categories(filters: IrdICategoriesFilters, pagination: PaginationInput!, search: String): IrdCategoryListOutput!
+  ird_categories_all: [IrdCategory!]!
+  ird_category(id: String!): IrdCategory
+  ird_drink_categories: [IrdCategory!]!
+  ird_food_categories: [IrdCategory!]!
+  ird_item(id: String!): IrdItem
+  ird_items(filters: IrdItemFilters, pagination: PaginationInput!, search: String): IrdItemListOutput!
+  ird_menu(type: IrdCategoryEnum!): [IrdCategory!]
+  leisure(id: String!): Leisures
+  leisures(pagination: PaginationInput!, search: String!): LeisuresListOutput
+  leisures_mobile: [Leisures!]
+  login(input: LoginInput!): LoginOutput
+  logout: Boolean
+  meeting(id: String!): Meeting
+  meeting_mobile: [Meeting!]
+  meetings(pagination: PaginationInput!, search: String!): MeetingListOutput
+  mobile_conversation(id: String!): Conversation
+  number_rooms_available: Float
+  number_rooms_occupied: Float
+  order(id: String!): Order
+  orders(pagination: PaginationInput!, search: String, status: OrderItemStatusEnum): OrderListOutput!
+  password_forgot(email: String!): Boolean!
+  phone_notif_list(residenceId: String!): [PhoneNotif!]!
+  profile: User
+  pushNotification(id: String!): PushNotification
+  pushNotifications(pagination: PaginationInput!, search: String!): PushNotificationListOutput
+  ready_order: Float
+  rejected_order: Float
+  reservation(id: String!): Reservation
+  reservations(pagination: PaginationInput!, search: String): ReservationListOutput!
+  residence_byGsfId(gsfId: String!): Residence
+  role(id: String!): Role
+  roles(pagination: PaginationInput!, search: String): RoleListOutput!
+  room(id: String!): Room
+  roomPhones: [RoomPhoneListOutput!]
+  room_By_ResidenceId(id: String!): Room
+  room_by_GSFID(id: String!): Room
+  rooms(pagination: PaginationInput!, search: String, status: RoomStatusEnum): RoomListOutput!
+  rooms_available: [Room!]
+  staff_devices: [Device!]
+  stays: [Room!]
+  total_devices: Float
+  unread_number: Float!
+  user(id: String!): User
+  users(filters: UserFilters, pagination: PaginationInput!, search: String): UserListOutput!
+  waiting_order: Float
+  web_notif_alert_list: [WebNotif!]!
+  web_notif_list: [WebNotif!]!
+  wellBeing_categories(pagination: PaginationInput!, search: String): WellBeingCategoryListOutput!
+  wellBeing_categories_all: [WellBeingCategory!]!
+  wellBeing_category(id: String!): WellBeingCategory
+  wellBeing_item(id: String!): WellBeingItem
+  wellBeing_items(filters: WellBeingItemFilters, pagination: PaginationInput!, search: String): WellBeingItemListOutput!
+  wellBeing_mobile: [WellBeingCategory!]!
+}
+
+type Reservation {
+  ReservationNumber: String!
+  createdAt: DateTime
+  date: DateTime
+  eateryservice: Eatery
+  eventService: Event
+  guest: Guest
+  id: String!
+  itemId: String
+  leisureService: Leisures
+  meetingService: Meeting
+  numberOfPerson: Float!
+  reservationType: ReservationTypeEnum!
+  residence: Residence
+  residenceId: String!
+  room: Room
+  service: Eatery
+  serviceName: Translation
+  status: ReservationStatusEnum!
+  updatedAt: DateTime
+  wellBeingService: WellBeingItem
+}
+
+type ReservationListOutput {
+  list: [Reservation!]!
+  pagination: PaginationOutput!
+}
+
+enum ReservationStatusEnum {
+  Accepted
+  Rejected
+  Waiting
+}
+
+enum ReservationTypeEnum {
+  concierge
+  eateries
+  events
+  leisure
+  meeting
+  wellbeingitems
+}
+
+type Residence {
+  checkoutSoonSent: Boolean
+  createdAt: DateTime
+  device: Device
+  from: DateTime
+  guest: Guest
+  guestId: String
+  id: String
+  room: Room
+  roomId: String
+  status: String!
+  to: DateTime
+  updatedAt: DateTime
+}
+
+type Review {
+  comment: String
+  createdAt: DateTime
+  eateryservice: Eatery
+  guest: Guest
+  id: String!
+  itemId: String!
+  rating: Float
+  residenceId: String!
+  type: ServiceEnum!
+  updatedAt: DateTime
+}
+
+type ReviewsListOutput {
+  list: [Review!]!
+  pagination: PaginationOutput!
+}
+
+type Role {
+  createdAt: DateTime
+  description: String!
+  id: String!
+  number_assigned_users: Float
+  permissions: [PermissionsEnum!]
+  title: String!
+  updatedAt: DateTime
+}
+
+type RoleListOutput {
+  list: [Role!]!
+  pagination: PaginationOutput!
+}
+
+type Room {
+  amenities: String
+  capacity: Float!
+  createdAt: DateTime
+  device: Device
+  deviceId: String
+  floor: Float!
+  guest: Guest
+  id: String!
+  number: Float!
+  pricePerNight: Price
+  residence: Residence
+  residences: [Residence!]
+  section: Float!
+  status: RoomStatusEnum
+  type: String!
+  updatedAt: DateTime
+}
+
+type RoomListOutput {
+  list: [Room!]!
+  pagination: PaginationOutput!
+}
+
+type RoomPhoneListOutput {
+  roomNumber: Float!
+  roomPhone: String!
+}
+
+enum RoomStatusEnum {
+  free
+  occupied
+}
+
+enum RoomTypeEnum {
+  room
+  suite
+}
+
+enum ServiceEnum {
+  Concierge
+  Eatery
+  EateryCategory
+  EateryItem
+  EateryService
+  Events
+  IrdDrinks
+  IrdDrinksCategory
+  IrdDrinksItem
+  IrdEat
+  IrdEatCategory
+  IrdEatItem
+  Leisure
+  Meetings
+  Wellbeing
+  WellbeingCategory
+}
+
+type Shift {
+  friday: [DateTime!]!
+  monday: [DateTime!]!
+  saturday: [DateTime!]!
+  sunday: [DateTime!]!
+  thursday: [DateTime!]!
+  tuesday: [DateTime!]!
+  wednesday: [DateTime!]!
+}
+
+input ShiftInput {
+  firday: [String!]
+  monday: [String!]
+  saturday: [String!]
+  sunday: [String!]
+  thursday: [String!]
+  tuesday: [String!]
+  wednesday: [String!]
+}
+
+type StarsNumberOutput {
+  fiveStars: Float!
+  fourStars: Float!
+  oneStar: Float!
+  threeStars: Float!
+  twoStars: Float!
+}
+
+input SubmitReviewInput {
+  question: GsiQuestionsEnum!
+  rate: GsiRateEnum!
+  residenceId: String!
+  selectedAnswers: [String!]!
+}
+
+type Subscription {
+  message_listener: Message!
+  newMessage: String!
+  phoneNotif(gsfId: String!): PhoneNotif
+  webNotif: WebNotif!
+}
+
+type Translation {
+  ar: String
+  default: String
+  en: String
+  fr: String
+}
+
+input TranslationInput {
+  ar: String
+  default: String!
+  en: String
+  fr: String
+}
+
+input TranslationInputConciergeService {
+  ar: [String!]
+  default: [String!]!
+  en: [String!]
+  fr: [String!]
+}
+
+type TranslationServiceConcierge {
+  ar: [String!]
+  default: [String!]
+  en: [String!]
+  fr: [String!]
+}
+
+input UpdateAudienceInput {
+  age: [AgeRangeInput!]!
+  gender: [GenderEnum!]!
+  id: String!
+  nationality: [CountryEnum!]!
+  title: String!
+}
+
+input UpdateCompaignInput {
+  audienceIds: [String!]!
+  endDate: DateTime!
+  id: String!
+  pushNotificationId: String
+  startDate: DateTime!
+}
+
+input UpdateConciergeInput {
+  description: TranslationInput!
+  id: String!
+  listServices: TranslationInputConciergeService
+  title: TranslationInput!
+}
+
+input UpdateCurrentUserInput {
+  birthdate: DateTime
+  cin: String
+  country: CountryEnum!
+  email: String!
+  firstName: String
+  gender: GenderEnum
+  identity: IdentityEnum
+  lastName: String
+  passport: PassportInput
+  phone: PhoneInput!
+  roleId: String
+  staff_device: String
+}
+
+input UpdateDeviceInput {
+  brand: String
+  callLimit: Float
+  dataLimit: Float
+  description: String
+  gsfId: String
+  hasGsfId: Boolean!
+  hotspotPassword: String
+  hotspotSSID: String
+  id: String!
+  imei: Float
+  model: String
+  sim: PhoneInput
+  type: DeviceTypeEnum
+}
+
+input UpdateEateryCategoryInput {
+  description: TranslationInput!
+  id: String!
+  title: TranslationInput!
+  type: String!
+}
+
+input UpdateEateryItemInput {
+  categoryId: String!
+  description: TranslationInput!
+  id: String!
+  price: PriceInput!
+  title: TranslationInput!
+}
+
+input UpdateEventInput {
+  datefrom: DateTime
+  dateto: DateTime
+  description: TranslationInput
+  id: String!
+  location: String
+  phone: PhoneInput
+  price: PriceInput
+  singleDay: Boolean!
+  status: EventStatus!
+  title: TranslationInput
+}
+
+input UpdateGuestInput {
+  birthdate: DateTime
+  cin: String
+  confirmationPasscode: String
+  country: CountryEnum
+  firstName: String
+  gender: GenderEnum
+  id: String!
+  identity: IdentityEnum
+  lastName: String
+  passcode: String
+  passport: PassportInput
+  phone: PhoneInput
+}
+
+input UpdateIrdCategoryInput {
+  description: TranslationInput!
+  id: String!
+  title: TranslationInput!
+  type: IrdCategoryEnum!
+}
+
+input UpdateIrdItemInput {
+  categoryId: String!
+  description: TranslationInput!
+  id: String!
+  price: PriceInput!
+  title: TranslationInput!
+}
+
+input UpdateLeisuresInput {
+  description: TranslationInput!
+  from: String!
+  id: String!
+  price: PriceInput!
+  title: TranslationInput!
+  to: String!
+}
+
+input UpdateMeetingInput {
+  capacity: Float!
+  description: TranslationInput!
+  id: String!
+  price: PriceInput!
+  title: TranslationInput!
+}
+
+input UpdatePushNotificationInput {
+  description: TranslationInput!
+  id: String!
+  title: TranslationInput!
+}
+
+input UpdateRoleInput {
+  description: String
+  id: String!
+  permissions: [PermissionsEnum!]
+  title: String
+}
+
+input UpdateRoomInput {
+  capacity: Float
+  deviceId: String
+  floor: Float
+  id: String!
+  number: Float
+  section: Float
+  type: RoomTypeEnum!
+}
+
+input UpdateUserInput {
+  birthdate: DateTime
+  cin: String
+  country: CountryEnum!
+  email: String!
+  firstName: String
+  gender: GenderEnum
+  id: String!
+  identity: IdentityEnum
+  lastName: String
+  passport: PassportInput
+  phone: PhoneInput!
+  roleId: String
+  staff_device: String
+}
+
+input UpdateWellBeingCategoryInput {
+  description: TranslationInput!
+  id: String!
+  title: TranslationInput!
+}
+
+input UpdateWellBeingItemInput {
+  categoryId: String!
+  description: TranslationInput!
+  id: String!
+  price: PriceInput!
+  title: TranslationInput!
+}
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
+
+type User {
+  auth: Auth!
+  birthdate: DateTime
+  cin: String
+  country: String
+  createdAt: DateTime
+  email: String!
+  firstName: String!
+  gender: String
+  id: String!
+  identity: String
+  lastName: String!
+  passport: Passport
+  phone: Phone
+  profilePicture: String
+  relatedActivities: [ActivityLog!]
+  role: Role
+  roleId: String
+  staff_device: String
+  type: String
+  updatedAt: DateTime
+  username: String!
+  version: String
+}
+
+input UserFilters {
+  gender: GenderEnum
+}
+
+type UserListOutput {
+  list: [User!]!
+  pagination: PaginationOutput!
+}
+
+input ValidateConfirmationKeyInput {
+  confirmationKey: String!
+  userId: String!
+}
+
+type WebNotif {
+  conciergeRequest: ConciergeRequest
+  conciergeRequestId: String
+  createdAt: DateTime
+  gsiId: String
+  gsiQuestion: GsiQuestionsEnum
+  guest: Guest
+  id: String!
+  order: Order
+  orderId: String
+  orderItemId: String
+  passCode: String
+  read: Boolean
+  reservation: Reservation
+  reservationId: String
+  residenceId: String
+  type: WebNotifTypeEnum!
+  updatedAt: DateTime
+}
+
+enum WebNotifTypeEnum {
+  check_in
+  check_out
+  check_out_soon
+  check_today
+  conciergeRequest
+  gsi_flop_review
+  order
+  order_delivered
+  order_in_delivery
+  order_in_progress
+  order_item_rejected
+  order_ready
+  order_rejected
+  reservation
+  reset_passcode
+  resevation_accept
+  resevation_reject
+}
+
+type WellBeingCategory {
+  clicks: Float
+  createdAt: DateTime
+  description: Translation!
+  id: String!
+  image: String
+  items: [WellBeingItem!]
+  showed: Boolean!
+  title: Translation!
+  updatedAt: DateTime
+  views: Float
+}
+
+type WellBeingCategoryListOutput {
+  list: [WellBeingCategory!]!
+  pagination: PaginationOutput!
+}
+
+type WellBeingItem {
+  categoryId: String
+  clicks: Float
+  createdAt: DateTime
+  description: Translation!
+  id: String!
+  image: String
+  price: Price
+  showed: Boolean
+  title: Translation!
+  updatedAt: DateTime
+  views: Float
+}
+
+input WellBeingItemFilters {
+  categoryIds: [String!]
+}
+
+type WellBeingItemListOutput {
+  list: [WellBeingItem!]!
+  pagination: PaginationOutput!
+}

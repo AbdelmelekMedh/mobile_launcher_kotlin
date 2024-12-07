@@ -1,0 +1,1 @@
+./gradlew :app:downloadApolloSchema --endpoint='https://90c8-197-29-149-115.ngrok-free.app/graphql' --schema=app/src/main/graphql/graphql/schema.sdl

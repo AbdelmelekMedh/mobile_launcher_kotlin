@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.MenuDrinkFragment">
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="ltr">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/header_holder">
+
+        <FrameLayout
+            android:id="@+id/chosen_content_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tabs"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:id="@+id/focusedMenuItem"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/background_light">
+
+                <!--            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/btn_order"
+                android:layout_marginBottom="8dp"
+                android:requiresFadingEdge="vertical">-->
+
+                <RelativeLayout
+                    android:id="@+id/relative_layout_chosen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/chosen_content_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/ic_block_black_24dp" />
+
+                    <TextView
+                        android:id="@+id/chosen_content_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/chosen_content_image"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_toLeftOf="@id/chosen_content_price"
+                        android:fontFamily="@font/interstateplus_light"
+                        android:singleLine="false"
+                        android:textAlignment="textStart"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:id="@+id/chosen_content_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/chosen_content_image"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:fontFamily="@font/interstate_bold"
+                        android:singleLine="true"
+                        android:textColor="#739147"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/chosen_content_oldprice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/chosen_content_image"
+                        android:layout_toLeftOf="@id/chosen_content_price"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:fontFamily="@font/interstate_bold"
+                        android:singleLine="true"
+                        android:textColor="@color/red"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/choosen_content_summery"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/chosen_content_name"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="4dp"
+                        android:fontFamily="@font/interstateplus_light"
+                        android:singleLine="false"
+                        android:textAlignment="textStart"
+                        android:textColor="@android:color/tertiary_text_light"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/chosen_content_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/choosen_content_summery"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="4dp"
+                        android:singleLine="false"
+                        android:textAlignment="textStart"
+                        android:textColor="@android:color/tertiary_text_light"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_beverage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/chosen_content_description"
+                        android:layout_marginBottom="60dp"
+                        android:padding="8dp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:listitem="@layout/item_drink_beverage" />
+
+                    <RelativeLayout
+                        android:id="@+id/no_order"
+                        android:layout_width="match_parent"
+                        android:layout_height="420dp"
+                        android:layout_below="@id/chosen_content_description"
+                        android:background="@color/white"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="20dp"
+                            android:src="@drawable/ic_panier_vide" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="260dp"
+                            android:fontFamily="@font/interstate_light"
+                            android:text="@string/no_order"
+                            android:textAlignment="center"
+                            android:textColor="#498aa5"
+                            android:textSize="18sp" />
+                    </RelativeLayout>
+                </RelativeLayout>
+                <!--    </ScrollView>-->
+
+                <!-- Boutons Order and cancel -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btn_order"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="130dp"
+                    app:cardBackgroundColor="#739147"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="4dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="2dp">
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:fontFamily="@font/interstateplus_light"
+                            android:text="@string/shop_order_noew"
+                            android:textColor="@android:color/white"
+                            android:textSize="13sp" />
+
+                        <ImageView
+                            android:id="@+id/imageView5"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="8dp"
+                            android:layout_toRightOf="@id/textView6"
+                            app:srcCompat="@drawable/ic_btn_basket"
+                            app:tint="@android:color/white" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btn_cancel"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="130dp"
+                    android:visibility="visible"
+                    app:cardBackgroundColor="#931411"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="4dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="2dp">
+
+                        <TextView
+                            android:id="@+id/btn_cancel_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:fontFamily="@font/interstateplus_light"
+                            android:text="@string/cancel"
+                            android:textColor="@android:color/white"
+                            android:textSize="13sp" />
+
+                        <ImageView
+                            android:id="@+id/btn_cancel_img"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="8dp"
+                            android:layout_toRightOf="@id/btn_cancel_txt"
+                            app:srcCompat="@drawable/ic_icone_annuler"
+                            app:tint="@android:color/white" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- END Boutons Order and cancel -->
+
+            </RelativeLayout>
+
+        </FrameLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        <RelativeLayout
+            android:id="@+id/header_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="90dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/boissons3" />
+
+                <RelativeLayout
+                    android:id="@+id/top_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@id/buttom_header">
+
+                    <ImageButton
+                        android:id="@+id/btn_back"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@id/service_title"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/interstateplus_light"
+                        android:paddingLeft="7dp"
+                        android:paddingTop="4dp"
+                        android:paddingRight="7dp"
+                        android:paddingBottom="4dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_arrow_head"
+                        app:tint="@android:color/white" />
+
+                    <TextView
+                        android:id="@+id/service_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/interstateplus_light"
+                        android:maxWidth="200dp"
+                        android:singleLine="true"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/buttom_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="35.5dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/common_google_signin_btn_text_light_default">
+
+                    <TextView
+                        android:id="@+id/restaurant_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/champagne_limousines_thickbold"
+                        android:maxWidth="200dp"
+                        android:singleLine="true"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/white" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            style="@style/MyTabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/header_holder"
+            android:visibility="gone"
+            app:tabBackground="@color/light_black"
+            app:tabIndicatorColor="@android:color/white"
+            app:tabSelectedTextColor="@android:color/white"
+            app:tabTextColor="@color/grey">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/interstate_light"
+                android:text="@string/restaurant_menu" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/interstate_light"
+                android:text="@string/restaurant_reservation" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/interstate_light"
+                android:text="@string/restaurant_about" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/interstate_light"
+                android:text="@string/restaurant_review" />
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <ImageView
+            android:id="@+id/empty_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/empty_drinks_list"
+            android:visibility="gone" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/menu_restaurant_frame"
+            android:layout_below="@id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="60dp">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+</FrameLayout>
+

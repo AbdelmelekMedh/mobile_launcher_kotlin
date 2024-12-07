@@ -1,0 +1,19 @@
+query mobile_conversation($id: String!) {
+    mobile_conversation(id: $id) {
+        id
+        chats {
+            sender {
+                firstName
+                lastName
+                email
+                profilePicture
+            }
+            message
+            senderId
+            sendingTime
+            guestMessage
+        }
+        unread_number
+        unread_number_for_guest
+    }
+}

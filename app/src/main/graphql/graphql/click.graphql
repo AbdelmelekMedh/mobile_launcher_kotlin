@@ -1,0 +1,12 @@
+mutation click(
+    $itemId: String!
+    $residenceId: String!
+    $service: ServiceEnum!
+) {
+    click(itemId: $itemId, residenceId: $residenceId, service: $service) {
+        id
+        clicks
+        itemId
+        residenceId
+    }
+}

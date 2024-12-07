@@ -1,0 +1,26 @@
+query meeting_mobile {
+    meeting_mobile {
+        id
+        picture
+        price {
+            amount
+            currency
+            hasDiscount
+            discountType
+            discountAmount
+        }
+        title {
+            default
+            ar
+            en
+            fr
+        }
+        description {
+            default
+            ar
+            en
+            fr
+        }
+        capacity
+    }
+}

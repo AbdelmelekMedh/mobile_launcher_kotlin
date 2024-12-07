@@ -1,0 +1,17 @@
+mutation rateServiceMobile($comment: String!
+    $itemId: String!
+    $rating: Float!
+    $residenceId: String!
+    $type: ServiceEnum!){
+    rateServiceMobile(comment:$comment itemId:$itemId rating:$rating
+        residenceId:$residenceId type:$type){
+        id
+        residenceId
+        comment
+        itemId
+        type
+        rating
+        createdAt
+        updatedAt
+    }
+}

@@ -1,0 +1,13 @@
+subscription message_listener {
+    message_listener {
+        sender {
+            firstName
+            lastName
+            email
+            profilePicture
+        }
+        message
+        senderId
+        sendingTime
+    }
+}

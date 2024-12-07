@@ -1,0 +1,5 @@
+mutation cancel_order($orderid: String!) {
+    cancel_order(orderid: $orderid) {
+        id
+    }
+}

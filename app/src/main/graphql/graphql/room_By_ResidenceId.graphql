@@ -1,0 +1,13 @@
+query room_By_ResidenceId($id: String!) {
+    room_By_ResidenceId(id: $id) {
+        number
+        capacity
+        amenities
+        floor
+        id
+        pricePerNight {
+            amount
+            currency
+        }
+    }
+}
